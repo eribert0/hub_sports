@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campeonatos</title>
+    <style>
+        .campeonatos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .campeonato {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            width: 200px;
+        }
+        .campeonato img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Campeonatos</h1>
+    {% for campeonato in campeonatos %}
+    <div class="campeonato">
+        {% if campeonato.logo %}
+            <img src="{{ campeonato.logo }}" alt="{{ campeonato.nome }}">
+        {% endif %}
+        <h3>
+            {% if campeonato.id %}
+                <a href="{% url 'campeonato-detalhes' campeonato.id %}">{{ campeonato.nome }}</a>
+            {% else %}
+                {{ campeonato.nome }}
+            {% endif %}
+        </h3>
+        
+    </div>
+    {% endfor %}
+
+    <a href="{% url 'futebol-home' %}">Voltar para a Home</a>
+</body>
+</html>

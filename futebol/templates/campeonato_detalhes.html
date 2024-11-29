@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Campeonato</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .campeonato {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .campeonato img {
+            max-width: 150px;
+            margin-bottom: 10px;
+        }
+        .info {
+            text-align: left;
+        }
+        .info h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="campeonato">
+        {% if campeonato.logo %}
+            <img src="{{ campeonato.logo }}" alt="{{ campeonato.nome }}">
+        {% endif %}
+        <h1>{{ campeonato.nome }}</h1>
+        <div class="info">
+            <h2>Informações:</h2>
+            <p><strong>ID:</strong> {{ campeonato.id }}</p>
+            <p><strong>Temporada Atual:</strong> {{ campeonato.temporada_atual }}</p>
+            <p><strong>Rodada Atual:</strong> {{ campeonato.rodada_atual }}</p>
+            <p><strong>Tipo:</strong> {{ campeonato.tipo }}</p>
+            <p><strong>Status:</strong> {{ campeonato.status }}</p>
+        </div>
+    </div>
+    <a href="{% url 'campeonatos' %}">Voltar para a lista de campeonatos</a>
+</body>
+</html>
