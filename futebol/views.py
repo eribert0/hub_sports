@@ -26,7 +26,7 @@ def futebol_campeonatos(request):
     return render(request, 'campeonatos.html', {'campeonatos':campeonatos})
 
 def campeonato_detalhes(request, campeonato_id):
-    url = f'https://api.api-futebol.com.br/v1/campeonatos/{campeonato_id}'
+    url = f'https://api.api-futebol.com.br/v1/campeonatos/{campeonato_id}/tabela'
     headers = {
         'Authorization':'Bearer live_b03f8374826632e4e1a376d7320f52'
     }
@@ -34,8 +34,8 @@ def campeonato_detalhes(request, campeonato_id):
     response = requests.get(url, headers=headers)
 
     if response.status_code == 200:
-        campeonato = response.json()
+        tabela = response.json()
     else:
-        campeonato = {}
+        tabela = {}
 
-    return render(request, 'campeonato_detalhes.html', {'campeonato':campeonato})
+    return render(request, 'campeonato_detalhes.html', {'tabela':tabela})

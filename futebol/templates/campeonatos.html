@@ -44,3 +44,116 @@
     <a href="{% url 'futebol-home' %}">Voltar para a Home</a>
 </body>
 </html>
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campeonatos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .campeonatos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .campeonato {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 200px;
+            padding: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .campeonato:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .campeonato img {
+            max-width: 100%;
+            max-height: 100px;
+            margin-bottom: 15px;
+            object-fit: contain;
+        }
+
+        .campeonato h3 {
+            font-size: 18px;
+            color: #007bff;
+            margin: 10px 0;
+        }
+
+        .campeonato h3 a {
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.2s;
+        }
+
+        .campeonato h3 a:hover {
+            color: #0056b3;
+        }
+
+        .back-home {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            font-size: 16px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            max-width: 200px;
+        }
+
+        .back-home:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Campeonatos</h1>
+    <div class="campeonatos">
+        {% for campeonato in campeonatos %}
+        <div class="campeonato">
+            {% if campeonato.logo %}
+                <img src="{{ campeonato.logo }}" alt="{{ campeonato.nome }}">
+            {% endif %}
+            <h3>
+                {% if campeonato.id %}
+                    <a href="{% url 'campeonato-detalhes' campeonato.id %}">{{ campeonato.nome }}</a>
+                {% else %}
+                    {{ campeonato.nome }}
+                {% endif %}
+            </h3>
+        </div>
+        {% endfor %}
+    </div>
+
+    <a href="{% url 'futebol-home' %}" class="back-home">Voltar para a Home</a>
+</body>
+</html> -->
